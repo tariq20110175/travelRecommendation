@@ -101,6 +101,13 @@
             color: white;
             transform: scale(1.2);
         }
+        .results 
+        { margin: 20px; 
+            padding: 10px;
+             background-color: rgba(0, 0, 0, 0.7); 
+             border-radius: 10px;
+             } 
+        .results img { max-width: 100%; height: auto; }
     </style>
 </head>
 <body>
@@ -111,9 +118,9 @@
             <a href="contact.html">Contact Us</a>
         </div>
         <div class="search-bar">
-            <input id='searchbar' type="text" placeholder="Enter a destination or keyword">
-            <button id="search" type="button">Search</button>
-            <button id="reset" type="button" >Reset</button>
+            <input type="text" id="search-input" placeholder="Enter a destination or keyword">
+             <button type="button" id="search-button">Search</button> 
+            <button type="button" id="reset-button">Reset</button>
         </div>
     </div>
     <div class="social-icons">
@@ -123,5 +130,7 @@
         <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
     <div class="message"> Welcome to TravelBloom! Explore our features below. </div>
+    <div class="results" id="results"></div>
+    <script src="travel_recommendation.js"></script>
 </body>
 </html>

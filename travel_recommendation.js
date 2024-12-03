@@ -1,10 +1,59 @@
-const searchbar=    document.getElementById('searchbar');
-const resetbtn =document.getElementById('reset');
+document.addEventListener('DOMContentLoaded', (event) => {
+    const resetButton = document.getElementById('reset-button');
+    const searchButton = document.getElementById('search-button');
+    const searchInput = document.getElementById('search-input');
+    const resultsDiv = document.getElementById('results');
 
-function clearSearch()
-{ 
-    document.getElementById('searchbar').value = '';
-searchbar.value='';
-}
+    resetButton.addEventListener('click', () => {
+        searchInput.value = '';
+        resultsDiv.innerHTML = '';
+    });
 
-resetbtn.onclick=clearSearch();
+    searchButton.addEventListener('click', () => {
+        const query = searchInput.value.toLowerCase();
+        fetch('travel_recommendation_api.json')
+            .then(response => response.json())
+            .then(data => {
+                const results = [];
+                // Search countries and cities
+                data.countries.forEach(country => {
+                    country.cities.forEach(city => {
+                        if (city.name.toLowerCase().includes(query)) {
+                            results.push(city);
+                        }
+                    });
+                });
+                // Search temples
+                data.temples.forEach(temple => {
+                    if (temple.name.toLowerCase().includes(query)) {
+                        results.push(temple);
+                    }
+                });
+                // Search beaches
+                data.beaches.forEach(beach => {
+                    if (beach.name.toLowerCase().includes(query)) {
+                        results.push(beach);
+                    }
+                });
+                displayResults(results);
+            });
+    });
+
+    function displayResults(results) {
+        resultsDiv.innerHTML = '';
+        if (results.length === 0) {
+            resultsDiv.innerHTML = '<p>No results found.</p>';
+        } else {
+            results.forEach(result => {
+                const resultElement = document.createElement('div');
+                resultElement.classList.add('result-item');
+                resultElement.innerHTML = `
+                    <h3>${result.name}</h3>
+                    <img src="${result.imageUrl}" alt="${result.name}">
+                    <p>${result.description}</p>
+                `;
+                resultsDiv.appendChild(resultElement);
+            });
+        }
+    }
+});
