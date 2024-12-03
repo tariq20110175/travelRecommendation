@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelBloom Navigation Bar</title>
+    <title>Contact Us - TravelBloom</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="travel_recommendation.js"></script>
-   <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('big-city.jpg'); /* Replace with your image URL */
+            background-image: url('big-city.jpg');
             background-size: cover;
             background-attachment: fixed;
             color: white;
@@ -21,6 +20,7 @@
             justify-content: space-between;
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
             padding: 10px;
+            width: 100%;
         }
         .navbar a {
             color: white;
@@ -76,53 +76,76 @@
             color: white;
             transform: scale(1.2);
         }
-        .message {
-             
-            padding: 10px; 
-            text-align: center;
-        }
-        .social-icons {
+        .contact-container {
             display: flex;
-            justify-content: center;
-            margin-top: 20px;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin: 50px auto;
+            width: 80%;
+            border-radius: 10px;
         }
-        .social-icons a {
-            color: white;
-            font-size: 24px;
+        .header {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 60%;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
             padding: 10px;
-            margin: 0 10px;
-            text-decoration: none;
-            border: 2px solid white;
-            border-radius: 50%;
-            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
         }
-        .social-icons a:hover {
+        .contact-form button {
+            padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
-            transform: scale(1.2);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact Us</a>
-        </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Enter a destination or keyword">
-            <button type="button">Search</button>
-            <button type="button">Reset</button>
-        </div>
-    </div>
     <div class="social-icons">
         <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
-    <div class="message"> 
-        Contact Page </div>
+    <div class="navbar">
+       <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Enter a destination or keyword">
+            <button type="button" id="search-button">Search</button>
+            <button type="button" id="reset-button">Reset</button>
+        </div>
+    </div>
+    <div class="contact-container">
+        <div class="header">CONTACT US</div>
+        <div class="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" rows="5" required></textarea>
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+
+    <script src="travel_recommendation.js"></script>
 </body>
 </html>
