@@ -77,9 +77,16 @@
             transform: scale(1.2);
         }
         .message {
-             
-            padding: 10px; 
-            text-align: center;
+            display: flex;
+    flex-direction: column;
+    justify-content: right;
+    position: fixed;
+    top: 50%;
+    left: 80;
+    transform: translateY(-50%);
+    text-align: left;
+    width: 40%;
+    margin-left: 60px;
         }
         .social-icons {
             display: flex;
@@ -135,7 +142,21 @@
         <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
-    <div class="message"> Welcome to TravelBloom! Explore our features below. </div>
+    <div class="message"> 
+        <h1>EXPLORE
+            DREAM
+            DESTINATION
+        </h1>
+                <p>
+            It encourages exploration of unfamiliar
+            territories, embracing diverse cultures and
+            landscapes, while pursuing the desired
+            destination that captivates the heart and
+            ignites a sense of wonder.
+                </p>
+                <button type="button" width="100px">
+            BOOK NOW</button>
+    </div>
     
     <div class="results" id="results"></div>
     <script src="travel_recommendation.js"></script>
