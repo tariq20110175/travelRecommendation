@@ -1,5 +1,10 @@
+const searchbar=    document.getElementById('searchbar');
+const resetbtn =document.getElementById('reset');
+
 function clearSearch()
-{
-    document.getElementById('searchbar').innerText="";
+{ 
+    document.getElementById('searchbar').value = '';
+searchbar.value='';
 }
-document.getElementById("reset").addEventListener('click',clearSearch);
+
+resetbtn.onclick=clearSearch();
