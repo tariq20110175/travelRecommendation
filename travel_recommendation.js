@@ -37,10 +37,10 @@ searchInput.addEventListener("keypress",function(event) {
                         results.push(temple);
                     }
                 });
-                if(query.toLowerCase().includes('temple')){
-                    data.temples.forEach(temple => {
+             //   if(query.toLowerCase().includes('temple')){
+               //     data.temples.forEach(temple => {
                    
-                        results.push(temple);
+                   //     results.push(temple);
                     
                 });}
                 // Search beaches
@@ -49,13 +49,17 @@ searchInput.addEventListener("keypress",function(event) {
                         results.push(beach);
                     }
                 });
-                if(query.toLowerCase().includes('beach')){
-                data.beaches.forEach(beach => {
+           //     if(query.toLowerCase().includes('beach')){
+            //    data.beaches.forEach(beach => {
                     
-                        results.push(beach);
+            //            results.push(beach);
                     
+            //    });  }
+    data.forEach(qq => {
+                    if (qq.toLowerCase().includes(query)) {
+                        results.push(qq);
+                    }
                 });
-                }
                 displayResults(results);
             });
     });
