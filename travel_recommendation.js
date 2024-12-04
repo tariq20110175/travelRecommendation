@@ -37,7 +37,7 @@ searchInput.addEventListener("keypress",function(event) {
                         results.push(temple);
                     }
                 });
-                if(query.toLowerCase().includes('temp')){
+                if(query.toLowerCase().includes('temple')){
                     data.temples.forEach(temple => {
                    
                         results.push(temple);
@@ -49,7 +49,7 @@ searchInput.addEventListener("keypress",function(event) {
                         results.push(beach);
                     }
                 });
-                if(query.toLowerCase().includes('beach'){
+                if(query.toLowerCase().includes('beach')){
                 data.beaches.forEach(beach => {
                     
                         results.push(beach);
