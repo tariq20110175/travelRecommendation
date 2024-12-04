@@ -31,35 +31,43 @@ searchInput.addEventListener("keypress",function(event) {
                         }
                     });
                 });
+
+                 if(query.toLowerCase().includes('countr')){
+                   data.countries.forEach(country => {
+                    country.cities.forEach(city => {
+                       
+                            results.push(city);
+                        
+                    });
+                });}
                 // Search temples
                 data.temples.forEach(temple => {
                     if (temple.name.toLowerCase().includes(query)) {
                         results.push(temple);
                     }
                 });
-             //   if(query.toLowerCase().includes('temple')){
-               //     data.temples.forEach(temple => {
+                if(query.toLowerCase().includes('temple')){
+                    data.temples.forEach(temple => {
                    
-                   //     results.push(temple);
+                        results.push(temple);
                     
-            //    });}
+                });}
                 // Search beaches
                 data.beaches.forEach(beach => {
                     if (beach.name.toLowerCase().includes(query)) {
                         results.push(beach);
                     }
                 });
-           //     if(query.toLowerCase().includes('beach')){
-            //    data.beaches.forEach(beach => {
+                if(query.toLowerCase().includes('beach')){
+                data.beaches.forEach(beach => {
                     
-            //            results.push(beach);
+                        results.push(beach);
                     
-            //    });  }
-    data.forEach(qq => {
-                    if (qq.toLowerCase().includes(query)) {
-                        results.push(qq);
-                    }
-                });
+               });  }
+ //   data.forEach(qq => {
+          //          if (qq.toLowerCase().includes(query)) {
+          //              results.push(qq);
+         //           }                });
                 displayResults(results);
             });
     });
