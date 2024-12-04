@@ -42,7 +42,7 @@ searchInput.addEventListener("keypress",function(event) {
                    
                    //     results.push(temple);
                     
-                });}
+            //    });}
                 // Search beaches
                 data.beaches.forEach(beach => {
                     if (beach.name.toLowerCase().includes(query)) {
