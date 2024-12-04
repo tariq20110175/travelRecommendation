@@ -37,12 +37,25 @@ searchInput.addEventListener("keypress",function(event) {
                         results.push(temple);
                     }
                 });
+                if(querytoLowerCase().includes('temp')){
+                    data.temples.forEach(temple => {
+                   {
+                        results.push(temple);
+                    }
+                });}
                 // Search beaches
                 data.beaches.forEach(beach => {
                     if (beach.name.toLowerCase().includes(query)) {
                         results.push(beach);
                     }
                 });
+                if(query.toLowerCase().includes('beach'){
+                data.beaches.forEach(beach => {
+                    {
+                        results.push(beach);
+                    }
+                });
+                    
                 displayResults(results);
             });
     });
